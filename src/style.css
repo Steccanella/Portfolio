@@ -1,0 +1,857 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+@font-face {
+  font-family: "futurabold";
+  src: url("futura_bold-webfont.woff2") format("woff2"),
+    url("futura_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* section {
+    background-color: rgb(250, 249, 246);
+} */
+
+.hero {
+  background-image: linear-gradient(to top right, #fab395, #3d89ec);
+  height: 100vh;
+  color: #292a31;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+
+  justify-content: space-between;
+}
+/* Expanding underline when hovering over nav items */
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: black;
+  height: 2px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+  transition: ease 0.6s;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  width: 500px;
+  justify-content: space-around;
+  font-size: 22px;
+}
+
+ul.show {
+  display: flex;
+  margin: 10px;
+}
+
+li {
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+/* style the dark/light mode switch */
+
+.switch {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(46, 44, 44);
+  position: relative;
+}
+
+.flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.3s;
+  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+    inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+
+.moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 0 0 rgb(250, 249, 246);
+  position: absolute;
+  top: 5px;
+  left: 40px;
+}
+
+.sun {
+  width: 20px;
+  height: 20px;
+  left: 10px;
+  position: absolute;
+  top: 5px;
+}
+
+h1 {
+  font-size: 90px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+#fsd {
+  margin: 0;
+  font-weight: 300;
+  font-size: 70px;
+}
+
+.hero-text {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "futurabold";
+  margin-top: 50px;
+  height: 100%;
+}
+
+.hero-area {
+  justify-content: center;
+  /* display: flex; */
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  font-weight: 0;
+
+  z-index: 3;
+}
+
+.button {
+  width: 170px;
+  height: 50px;
+  background-color: transparent;
+  border: solid rgb(36, 33, 33) 3px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  padding-top: 5px;
+  margin-top: 20px;
+  margin-right: 30px;
+  border-radius: 3px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: rgb(36, 33, 33);
+  color: rgb(250, 249, 246);
+  transition: all 0.6s ease;
+}
+.button:hover a {
+  color: rgb(250, 249, 246);
+  transition: all 1.2s ease;
+}
+
+.button:active {
+  background-color: rgb(250, 249, 246);
+  color: rgb(250, 249, 246);
+}
+
+
+.logo {
+  height: 90px;
+  margin: 10px;
+
+  transition: transform 0.7s ease-in-out;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.socials {
+  display: flex;
+  margin: 40px;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.socials div {
+  margin-right: 30px;
+}
+
+.social {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.social:hover,
+.social:focus,
+.social:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+/* scroll effect animation */
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sub-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  /* margin-top: 30px;  */
+}
+
+.information h2 {
+  font-size: 40px;
+}
+
+.information {
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+}
+
+.information p {
+  font-size: 20px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills img {
+  height: 100px;
+}
+
+/* animation effect upon hovering on skills */
+
+.moveup {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.moveup:hover,
+.social:focus,
+.social:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+.skill {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 60px;
+}
+/* Modal Popup for CV */
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active{
+  visibility: visible;
+  opacity: 1;
+}
+.modal {
+  background-color: white;
+  width: 640px;
+  padding: 30px;
+  border-radius: 9px;
+  position: relative;
+}
+.dark .modal{
+  background-color: #38383d;
+}
+
+.modal-close {
+  position: absolute;
+  top:10px;
+  right: 10px;
+
+  cursor: pointer;
+  
+}
+.download-button {
+ text-align: center;
+ background-color: transparent;
+ border: solid rgb(36, 33, 33) 2px;
+ text-align: center;
+ font-size: 20px;
+ padding-top: 5px;
+cursor: pointer;
+ border-radius:3px;
+}
+
+.download-button:hover a {
+  color: rgb(250, 249, 246);
+  transition: all 1.2s ease;
+
+}
+
+.download-button:hover {
+  background-color: rgb(36, 33, 33);
+
+  color: rgb(250, 249, 246);
+  transition: all 0.6s ease;
+}
+
+.download-button:active {
+  background-color: rgb(250, 249, 246);
+  color: rgb(250, 249, 246);
+}
+
+.dark .download-button {
+  text-align: center;
+  background-color: transparent;
+  border: solid rgb(250, 249, 246) 2px;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 5px;
+ cursor: pointer;
+  border-radius:3px;
+ }
+ 
+ .dark .download-button:hover a {
+   color: rgb(36, 33, 33);
+   transition: all 1.2s ease;
+
+ }
+
+
+ .dark .download-button:hover {
+   background-color: rgb(250, 249, 246);
+   color: rgb(36, 33, 33);
+   transition: all 0.6s ease;
+ }
+ .dark .download-button a {
+  color: white;
+}
+ 
+
+
+.displayNone {
+  display: none;
+}
+.sub-section-alternative {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.sub-section-alternative h2 {
+  font-size: 40px;
+}
+
+.project-card {
+  width: 325px;
+  height: 550px;
+  box-shadow: 5px 5px 20px rgb(170, 167, 167);
+}
+
+.project-card:hover {
+  box-shadow: 5px 5px 20px rgb(110, 107, 107);
+}
+
+.dark .project-card {
+  box-shadow: 5px 5px 15px rgb(72, 81, 117);
+
+  /* box-shadow: 5px 5px 10px rgb(93, 98, 116); */
+  background-color: #38383d;
+  color: rgb(250, 249, 246);
+}
+
+.dark .project-card:hover {
+  /* box-shadow: 5px 5px 15px rgb(121, 129, 161); */
+  box-shadow: 5px 5px 20px rgb(120, 132, 179);
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.proj-skill {
+  width: 40px;
+}
+
+footer {
+  height: 700px;
+  background-color: #292a31;
+  color: rgb(250, 249, 246);
+}
+
+form {
+  max-width: 550px;
+  width: 90%;
+  margin: 17vh auto 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+form h1 {
+  font-size: 60px;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  border: none;
+  background: rgb(250, 249, 246);
+  /* border: none; */
+  /* border-bottom: 1px solid #D3D3D3; */
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border: 3px solid lightskyblue;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 200px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 0;
+  background: rgb(250, 249, 246);
+}
+
+.error {
+  color: rgb(248, 6, 6);
+}
+
+.error-border {
+  border-bottom: 3px solid rgb(248, 6, 6);
+}
+
+#success {
+  color: green;
+}
+
+@media only screen and (max-width: 1000px) {
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.information {
+  font-size: 15px;
+}
+
+.subtext {
+  font-size: 15px;
+  font-weight: 300;
+}
+.proj-button {
+  font-size: 15px;
+  font-weight: 300;
+  width: 130px;
+  height: 50px;
+  background-color: transparent;
+  border: solid rgb(36, 33, 33) 2px;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.proj-button:hover a {
+  color: rgb(250, 249, 246);
+  transition: all 1.2s ease;
+}
+
+.proj-button:hover {
+  background-color: rgb(36, 33, 33);
+  color: rgb(250, 249, 246);
+  transition: all 0.6s ease;
+}
+
+.proj-button:active {
+  background-color: rgb(250, 249, 246);
+  color: rgb(250, 249, 246);
+}
+.dark .proj-button {
+  font-size: 15px;
+  font-weight: 300;
+  width: 130px;
+  height: 50px;
+  background-color: transparent;
+  border: solid rgb(250, 249, 246) 2px;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.dark .proj-button a {
+  color: rgb(250, 249, 246);
+}
+
+.dark .fa-code,
+.dark .fa-desktop {
+  color: rgb(250, 249, 246);
+}
+
+.dark .proj-button:hover .fa-code {
+  color: #38383d;
+  transition: all 0.6s ease;
+}
+
+.dark .proj-button:hover .fa-desktop {
+  color: #38383d;
+  transition: all 0.6s ease;
+}
+
+.dark .button-container {
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.dark .proj-button:hover {
+  background-color: rgb(250, 249, 246);
+  color: #38383d;
+  transition: all 0.6s ease;
+}
+.dark .proj-button:hover a {
+  color: #38383d;
+  transition: all 1.2s ease;
+}
+
+.project-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-top: 25px;
+}
+/* zoom in on proj image hover */
+
+.img-hover-zoom {
+  height: 250px;
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.5);
+}
+
+.project-link {
+  text-decoration: none;
+  color: #2b2c38;
+}
+
+hr {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: #2b2c38;
+}
+
+/* transform nav bar to hambrger menu when screen is smaller than 1000px */
+
+.hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .switch {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    border: 0;
+    background-color: transparent;
+    color: rgb(250, 249, 246);
+    font-size: 30px;
+    align-self: flex-end;
+  }
+  ul {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    background-color: transparent;
+  }
+}
+.hamburger:focus {
+  outline: 0;
+}
+
+/* create clouds for day mode and the starry night for night mode */
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.clouds {
+  background: transparent url(images/dayclouds.png) repeat top center;
+  z-index: 2;
+  opacity: 4;
+  animation: move-clouds-back 600s linear infinite;
+}
+
+/* dark theme starts here */
+
+.dark {
+  background-color: #292a31;
+  transition: 0.33s;
+}
+
+.dark .flicker {
+  transform: translateX(40px);
+}
+
+.dark > * {
+  color: rgb(250, 249, 246);
+}
+
+.dark .button {
+  width: 170px;
+  height: 50px;
+  background-color: transparent;
+
+  border: solid rgb(250, 249, 246) 3px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  padding-top: 5px;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.dark .button a {
+  color: rgb(250, 249, 246);
+}
+
+.dark .button-container {
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.dark .button:hover {
+  background-color: rgb(250, 249, 246);
+  color: black;
+  transition: all 0.6s ease;
+}
+.dark .button:hover a {
+  color: black;
+  transition: all 1.2s ease;
+}
+
+/* .dark .fa-code, .dark .fa-desktop {
+    color: white;
+}
+
+.dark button .fa-code:hover {
+    color: black;
+} */
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@keyframes move-twinkle-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.dark .stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dark .stars {
+  background: #000 url(images/stars.png) repeat top center;
+  z-index: 0;
+}
+
+.dark .twinkling {
+  background: transparent url(images/twinkling.png) repeat top center;
+  z-index: 1;
+  animation: move-twinkle-back 200s linear infinite;
+}
+
+.dark .clouds {
+  background: transparent url(images/clouds.png) repeat top center;
+  z-index: 2;
+  opacity: 4;
+  animation: move-clouds-back 400s linear infinite;
+}
+
+.dark .hero {
+  background-color: rgb(250, 249, 246);
+  height: 100vh;
+  color: rgb(250, 249, 246);
+  font-size: 20px;
+}
+
+.dark .logo img {
+  content: url(images/logo3.png;);
+}
+
+.dark nav {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(250, 249, 246);
+}
+
+.dark nav a {
+  color: rgb(250, 249, 246);
+}
+
+/* Dark Mode Expanding underline when hovering over nav items */
+
+.dark nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: rgb(250, 249, 246);
+  height: 2px;
+}
+
+.dark nav.stroke ul li a:hover:after {
+  width: 100%;
+  transition: ease 0.6s;
+}
